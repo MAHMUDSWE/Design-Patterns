@@ -26,14 +26,14 @@ public class GenerateBill {
         String planName = null;
         switch (choice) {
             case 1:
-                planName = "DomesticPlan";                                
+                planName = "DomesticPlan";
                 break;
             case 2:
-                 planName = "DomesticPlan";  
+                 planName = "CommercialPlan";
                 break;
-                
+
             case 3:
-                 planName = "DomesticPlan";  
+                 planName = "InstitutionalPlan";
                 break;
             default:
                 break;
