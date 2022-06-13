@@ -12,11 +12,12 @@ public class GameCharacter {
     // global point of access to the object created
     public static GameCharacter getGameCharacter() {
         if (gameCharacter == null) {
-            synchronized (GameCharacter.class) {
-                if (gameCharacter == null) {
-                    gameCharacter = new GameCharacter();
-                }
-            }
+//            synchronized (GameCharacter.class) {
+//                if (gameCharacter == null) {
+//                    gameCharacter = new GameCharacter();
+//                }
+//            }
+            gameCharacter = new GameCharacter();
         }
 
         return gameCharacter;
