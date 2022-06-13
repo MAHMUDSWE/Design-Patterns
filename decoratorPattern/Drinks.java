@@ -1,7 +1,6 @@
 package decoratorPattern;
 
 /**
- *
  * @author Mahmud
  */
 public class Drinks implements Food {
@@ -18,13 +17,10 @@ public class Drinks implements Food {
     public double foodPrice() {
         return nescafePrice;
     }
-    
-    public void hi(){
+
+    public void hi() {
         System.out.println("Hello");
     }
-    
-    
-    
-    
+
 
 }

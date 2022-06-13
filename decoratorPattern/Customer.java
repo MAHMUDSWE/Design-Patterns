@@ -1,9 +1,10 @@
 package decoratorPattern;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 /**
- *
  * @author Mahmud
  */
 public class Customer {
@@ -13,9 +14,12 @@ public class Customer {
         double totalCost = 0;
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Press 1 for Plain Coffee, 2 for Espresso and 3 for Cappuccino.");
+
         System.out.print("Enter Choice: ");
+
         choice = Integer.parseInt(br.readLine());
         Food coffee = null;
+
         switch (choice) {
             case 1:
                 coffee = new BlackCoffee();
@@ -70,7 +74,7 @@ public class Customer {
                         }
                         return;
                     }
-                    
+
                 } while (choice != 4);
 
                 break;
@@ -94,7 +98,7 @@ public class Customer {
                     switch (choice) {
 
                         case 1: {
-                            coffee = new Milk((Food) new EspressoCoffee());
+                            coffee = new Milk(new EspressoCoffee());
                             System.out.println(coffee.prepareFood());
 
                             totalCost = totalCost + coffee.foodPrice();
@@ -110,7 +114,7 @@ public class Customer {
                         }
                         break;
                         case 3: {
-                            coffee = new Chocolate((Food) new EspressoCoffee());
+                            coffee = new Chocolate(new EspressoCoffee());
                             System.out.println(coffee.prepareFood());
 
                             totalCost = totalCost + coffee.foodPrice();
@@ -148,7 +152,7 @@ public class Customer {
                     switch (choice) {
 
                         case 1: {
-                            coffee = new Milk((Food) new CappuccinoCoffee());
+                            coffee = new Milk(new CappuccinoCoffee());
                             System.out.println(coffee.prepareFood());
 
                             totalCost = totalCost + coffee.foodPrice();
@@ -156,7 +160,7 @@ public class Customer {
                         }
                         break;
                         case 2: {
-                            coffee = new Sugar((Food) new CappuccinoCoffee());
+                            coffee = new Sugar(new CappuccinoCoffee());
                             System.out.println(coffee.prepareFood());
 
                             totalCost = totalCost + coffee.foodPrice();
